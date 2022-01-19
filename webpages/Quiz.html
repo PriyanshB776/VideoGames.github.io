@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title> Quiz </title>
+   <style>
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+   </head>
+   <div class="parallax"></div>
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="quiz.css">
+<body onload="myUsername()">
+<style>
+  body{
+  font-family: 'Poppins';
+  font-size: 22px;
+  background-color: white;
+  color:black;
+  }
+  .overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: yellow;
+}
+.result{
+    font-family: 'Poppins', sans-serif;
+    margin: 20px 20;
+
+}
+#confirm-button{
+    background-color: pink;
+    color: black;
+    padding: 10px;
+    margin: 25px 30;
+}
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+
+
+  }
+}
+</style>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="file:///Users/priyanshbeniwal/Desktop/PP%20website%20/webpages%20/home.html">Home</a>
+    <a href="file:///Users/priyanshbeniwal/Desktop/PP%20website%20/webpages%20/Whatarevidgames.html">Science behind Video Games</a>
+    <a href="file:///Users/priyanshbeniwal/Desktop/PP%20website%20/webpages%20/effect.html">Effect of Video Games</a>
+    <a href="file:///Users/priyanshbeniwal/Desktop/PP%20website%20/webpages%20/future.html">Future of Gaming Industry</a>
+    <a href="file:///Users/priyanshbeniwal/Desktop/PP%20website%20/webpages%20/populargames.html">Popular Games</a>
+          <a href="file:///Users/priyanshbeniwal/Desktop/PP%20website%20/webpages%20/Quiz.html"> Quiz</a>
+    <a href="file:///Users/priyanshbeniwal/Desktop/PP%20website%20/webpages%20/Bibiliography.html"> Bibilography</a>
+
+  </div>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+<style>
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
+<style>
+.parallax {
+  /* The image used */
+  background-image: url("https://images.unsplash.com/photo-1627856013091-fed6e4e30025?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+
+  /* Set a specific height */
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+
+<br>
+<h1 style="text-align:center"> Video Games Quiz </h1>
+
+<style>
+  .center{
+  text-align:center;
+width:100%;
+}
+  </style>
+<img src="file:///Users/priyanshbeniwal/Desktop/PP%20website%20/control-lever.png" class="center" style="width:15%;">
+<form name="quiz" id="quiz" class="quiz-body">
+  <h4 class ="little-padding-text" id="demo" style="text-align:center" style="text-decoration:underline;"></h4>
+
+  <h4 class="little-padding-text" style="text-align:center">Welcome to the Quiz!!
+      <br><br> This quiz has been designed to evaluate your knowledge of the world of Digital Games. <br>Give it a try to test your skills. </h4>
+      <br><Br>
+        <form name="quiz" id="quiz" class="quiz-body">
+
+          <h4 style="margin:20px;""quiz-question-text">1. Which famous battleground game has "V-Bucks"?</h4>
+          <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question1" value="1"> Call of Duty</h5>
+        <h5 style="margin:20px;"class="more-padding-text"><input type="radio" name="question1" value="2"> Rainbow Six Seige </h5>
+          <h5 style="margin:20px;"class="more-padding-text"><input type="radio" name="question1" value="3">Fortnite </h5>
+        <h5 style="margin:20px;"class="more-padding-text"><input type="radio" name="question1" value="4"> None of them</h5>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1570572137089-1655117ad216?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cG9uZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" class="center" style="width:50%;">
+        <br>
+        <div>
+          <h4 style="margin:20px;"class="quiz-question-text">2. What was the name of first video game ever?</h4>
+          <h5 style="margin:20px;"class="more-padding-text"><input type="radio" name="question2" value="5">Snake.io</h5>
+        <h5 style="margin:20px;"class="more-padding-text"><input type="radio" name="question2" value="6">Sudoku </h5>
+          <h5 style="margin:20px;"class="more-padding-text"><input type="radio" name="question2" value="7">Pong</h5>
+        <h5 style="margin:20px;"class="more-padding-text"><input type="radio" name="question2" value="8">Free Fire</h5>
+        </div>
+
+        <br>
+        <div>
+          <h4 style="margin:20px;"class="quiz-question-text">3. Which company published the "Far Cry 5" game?</h4>
+          <h5 style="margin:20px;"class="more-padding-text"><input type="radio" name="question3" value="9">Ubisoft</h5>
+        <h5 style="margin:20px;"class="more-padding-text"><input type="radio" name="question3" value="10">Bethesda  </h5>
+          <h5 style="margin:20px;"class="more-padding-text"><input type="radio" name="question3" value="11">Tencent</h5>
+        <h5 style="margin:20px;"class="more-padding-text"><input type="radio" name="question3" value="12">Supercell</h5>
+        </div>
+
+        <br>
+        <div>
+          <h4 style="margin:20px;"class="quiz-question-text">4. What is the best selling gaming console of all-time?</h4>
+          <h5 style="margin:20px;"class="more-padding-text"><input type="radio" name="question4" value="13">Playstation 5</h5>
+        <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question4" value="14">Nintendo Switch </h5>
+          <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question4" value="15">Playstation 2 </h5>
+        <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question4" value="16">Xbox 360</h5>
+        </div>
+        <img src="https://images.unsplash.com/photo-1469032923574-4f1413034019?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z3RhJTIwdnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" class="center" style="width:50%;">
+        <br>
+        <br>
+        <div>
+          <h4 style="margin:20px;" class="quiz-question-text">5. What is the best selling game of all-time?</h4>
+          <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question5" value="17">Minecraft</h5>
+        <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question5" value="18">GTA V</h5>
+          <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question5" value="19">FIFA 18</h5>
+        <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question5" value="20">Red Dead Redemption II</h5>
+        </div>
+
+
+        <br>
+        <div>
+          <h4 style="margin:20px;" class="quiz-question-text">6. Which food inspired Pacman's iconic design?</h4>
+          <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question6" value="25">Burger</h5>
+        <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question6" value="26">Pizza</h5>
+          <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question6" value="27">Hotdog</h5>
+        <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question6" value="28">Sandwich</h5>
+        </div>
+        <img src="https://images.unsplash.com/photo-1524685794168-52985e79c1f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWluZWNyYWZ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" class="center" style="width:50%;">
+        <br>
+
+        <br>
+        <div>
+          <h4 style="margin:20px;" class="quiz-question-text">7. Which is the  most expensive video game ever produced?</h4>
+          <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question7" value="29">Minecraft</h5>
+        <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question7" value="30">Call of Duty</h5>
+          <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question7" value="31">GTA V</h5>
+        <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question7" value="32">Tomb Raider</h5>
+        </div>
+
+        <br>
+        <div>
+          <h4 style="margin:20px;" class="quiz-question-text">8. What kind of game is "Fight Night 2004"?</h4>
+          <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question8" value="33">Boxing</h5>
+        <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question8" value="34">Football </h5>
+          <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question8" value="35">Wrestling</h5>
+        <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question8" value="36">Kung-Fu</h5>
+        </div>
+        <img src="https://images.unsplash.com/photo-1585427448073-f7c6fdec14e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fG1pbmVjcmFmdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" class="center" style="width:50%;">
+        <br>
+        <br>
+        <div>
+          <h4 style="margin:20px;" class="quiz-question-text">9. Which two materials you have to mix to make Obsidian in Minecraft?</h4>
+          <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question9" value="37">Lava and Diamond</h5>
+        <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question9" value="38">Water and Wood</h5>
+          <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question9" value="39">Lava and Water</h5>
+        <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question9" value="40">Stone and Diamond</h5>
+        </div>
+        <br>
+        <div>
+          <h4 style="margin:20px;" class="quiz-question-text">10. Which company manufactured the classic arcade game "Pong"?</h4>
+          <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question10" value="41">Nintendo</h5>
+        <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question10" value="42">Sony</h5>
+          <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question10" value="43">Atari</h5>
+        <h5 style="margin:20px;" class="more-padding-text"><input type="radio" name="question10" value="44">Microsoft</h5>
+        </div>
+        </form>
+        <div class="dropdown">
+          <button class="dropbtn">Answers</button>
+          <div class="dropdown-content">
+            <a >1. Fortnite </a>
+            <a >2. Pong </a>
+            <a >3. Ubisoft</a>
+              <a >4. Playstation 2</a>
+              <a>5. Minecraft </a>
+              <a >6. Pizza</a>
+              <a >7. GTA V</a>
+              <a >8. Boxing</a>
+              <a >9. Lava and Water</a>
+              <a >10. Atari</a>
+
+
+          </div>
+        </div>
+
+        <style>
+        footer{
+        background-color:white;
+        border: 1px solid black;
+        color:black;
+        }
+        </style>
+        <br>
+        <br>
+        <footer>
+        <br>
+
+          <center>
+
+            <a href="https://www.instagram.com/priyanshb23/?hl=en"><i class="fa fa-instagram" style="font-size:36px"></i></a>
+            <a href="https://www.youtube.com/channel/UCzjZ5TzCTygIHHzwtw4KRSA"><i class="fa fa-youtube-play" style="font-size:36px"></i></a>
+        </center>
+        <h5 style="text-align:center">If you have any queries then email to:&nbsp;<a href="mailto:PriyanshB@kis.in">PriyanshB@kis.in</a></h5>
+        <h5 style="text-align:center;color:green"> Phone number: 9929123086 </h5>
+
+              </footer>
+
+<script>
+
+  function myUsername() {
+      var username = prompt ("Please enter your name in order to continue the Quiz.");
+  if ( username == null || username == "") {
+      alert("Please Enter a Username!\n*Refresh the page to enter your username!");
+  } else {
+      document.getElementById("demo").innerHTML = "Hi " + username +  "!";
+      }
+
+</script>
+<script>
+  function myUsername() {
+      var username = prompt ("Please enter your name in order to continue the Quiz.");
+  if ( username == null || username == "") {
+      alert("Please Enter a Username!\n*Refresh the page to enter your username!");
+  } else {
+      document.getElementById("demo").innerHTML = "Hi " + username +  "!";
+      }
+  }
+</script>
+
+
+
+      </html>
